@@ -17,6 +17,8 @@
 /build
 
 # misc
+.env
+notes
 .DS_Store
 *.pem
 
