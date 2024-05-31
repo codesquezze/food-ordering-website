@@ -3,12 +3,12 @@ import { UserInfo } from "@/app/models/UserInfo";
 import bcrypt from "bcrypt";
 import * as mongoose from "mongoose";
 import { User } from '@/app/models/User';
-import NextAuth, { getServerSession } from "next-auth";
+import NextAuth, { getServerSession, AuthOptions  } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
 
-export const authOptions = {
+const authOptions:AuthOptions = {
   secret: process.env.SECRET,
   adapter: MongoDBAdapter(clientPromise),
   providers: [
